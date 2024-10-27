@@ -8,8 +8,7 @@ export type PostMessageTypes =
 
 export interface PostMessageOptions {
   type: PostMessageTypes;
-  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-  value?: any;
+  value?: unknown;
 }
 
 declare global {
