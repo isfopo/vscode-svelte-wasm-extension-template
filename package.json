@@ -52,14 +52,16 @@
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
-    "build": "npm run compile:view && npm run compile:extension && cargo build --target wasm32-unknown-unknown",
+    "generate:model": "wit2ts --outDir ./src ./wit",
+    "compile:wasm": "cargo build --target wasm32-unknown-unknown",
     "compile:extension": "tsc -b",
     "compile:view": "webpack --config src/view/webpack.config.mjs",
+    "build": "npm run compile:view && npm run compile:extension && npm run compile:wasm",
+    "watch:wasm": "cargo build --target wasm32-unknown-unknown",
     "watch:extension": "tsc -b -w",
     "watch:view": "webpack --config src/view/webpack.config.mjs --watch",
-    "watch": "concurrently \"npm run watch:view\"  \"npm run watch:extension\" && cargo build --target wasm32-unknown-unknown",
+    "watch": "npm run watch:wasm && concurrently \"npm run watch:view\"  \"npm run watch:extension\"",
     "lint": "eslint ./src",
-    "generate:model": "wit2ts --outDir ./src ./wit",
     "serve": "serve --cors -l 5000 --ssl-cert $HOME/certs/localhost.pem --ssl-key $HOME/certs/localhost-key.pem",
     "clean": "rm -rf node_modules && npm install"
   }
