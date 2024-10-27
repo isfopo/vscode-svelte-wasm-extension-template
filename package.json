@@ -1,12 +1,12 @@
 {
-	"name": "halt",
+	"name": "vscode-svelte-wasm-extension-template",
 	"publisher": "isfopo",
 	"author": {
 		"name": "Isaac Poole",
 		"email": "isaacpoolemusic@gmail.com"
 	},
-	"displayName": "Halt",
-	"description": "An unforgiving timer for the hyper-focused.",
+	"displayName": "vscode-svelte-wasm-extension-template",
+	"description": "An example demonstrating how to use the component model to integrate WebAssembly code into VS Code while providing a Webview written with Svelte.",
 	"version": "0.0.1",
 	"categories": [],
 	"keywords": [
@@ -21,9 +21,9 @@
 	"contributes": {
 		"commands": [
 			{
-				"command": "halt.show",
+				"command": "vscode-svelte-wasm-extension-template.show",
 				"title": "Show",
-				"category": "Halt"
+				"category": "Example"
 			}
 		]
 	},
