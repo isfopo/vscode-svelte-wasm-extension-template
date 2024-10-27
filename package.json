@@ -1,0 +1,61 @@
+{
+	"name": "halt",
+	"publisher": "isfopo",
+	"author": {
+		"name": "Isaac Poole",
+		"email": "isaacpoolemusic@gmail.com"
+	},
+	"displayName": "Halt",
+	"description": "An unforgiving timer for the hyper-focused.",
+	"version": "0.0.1",
+	"categories": [],
+	"keywords": [
+		"WASM",
+		"Component Model"
+	],
+	"engines": {
+		"vscode": "^1.89.0"
+	},
+	"main": "./out/extension",
+	"browser": "./dist/web/extension",
+	"contributes": {
+		"commands": [
+			{
+				"command": "halt.show",
+				"title": "Show",
+				"category": "Halt"
+			}
+		]
+	},
+	"dependencies": {
+		"@vscode/wasm-component-model": "^1.0.1"
+	},
+	"devDependencies": {
+		"@types/node": "^20",
+		"@types/vscode": "1.89.0",
+		"@typescript-eslint/eslint-plugin": "^7.6.0",
+		"@typescript-eslint/parser": "^7.6.0",
+		"esbuild": "^0.20.2",
+		"eslint": "^8.57.0",
+		"serve": "^14.2.1",
+		"svelte": "^4.2.19",
+		"svelte-check": "^4.0.5",
+		"svelte-cli": "^3.0.0",
+		"svelte-loader": "^3.2.4",
+		"svelte-preprocess": "^6.0.3",
+		"ts-loader": "^9.5.1",
+		"typescript": "^5.6.2",
+		"webpack": "^5.95.0",
+		"webpack-cli": "^5.1.4"
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"build": "npm run compile:view && npm run compile:extension && cargo build --target wasm32-unknown-unknown",
+		"compile:extension": "tsc -b",
+		"compile:view": "webpack --config src/view/webpack.config.mjs",
+		"watch": "tsc -b -w",
+		"lint": "eslint ./src --ext .ts,.tsx",
+		"generate:model": "wit2ts --outDir ./src ./wit",
+		"serve": "serve --cors -l 5000 --ssl-cert $HOME/certs/localhost.pem --ssl-key $HOME/certs/localhost-key.pem"
+	}
+}

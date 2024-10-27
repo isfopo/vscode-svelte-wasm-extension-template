@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "rootDir": "./",
+    "skipLibCheck": true,
+    "lib": ["es2022", "dom"],
+    "types": ["vscode"],
+    "module": "ESNext",
+    "strict": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "stripInternal": true
+  }
+}
