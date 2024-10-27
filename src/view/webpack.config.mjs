@@ -47,7 +47,6 @@ export default {
         use: [
           {
             loader: "ts-loader",
-            options: {},
           },
         ],
       },
@@ -67,5 +66,4 @@ export default {
   infrastructureLogging: {
     level: "log", // enables logging required for problem matchers
   },
-  experiments: { asyncWebAssembly: true },
 };
