@@ -41,14 +41,14 @@ export class HaltViewProvider {
             if (!data.value) {
               return;
             }
-            vscode.window.showInformationMessage(data.value);
+            vscode.window.showInformationMessage(data.value as string);
             break;
           }
           case "onError": {
             if (!data.value) {
               return;
             }
-            vscode.window.showErrorMessage(data.value);
+            vscode.window.showErrorMessage(data.value as string);
             break;
           }
         }
