@@ -4,3 +4,5 @@ client/out/**
 server/node_modules/**
 server/out/**
 bin
+
+src/calculator.ts
