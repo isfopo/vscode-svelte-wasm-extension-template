@@ -56,7 +56,7 @@
     "compile:view": "webpack --config src/view/webpack.config.mjs",
     "watch:extension": "tsc -b -w",
     "watch:view": "webpack --config src/view/webpack.config.mjs --watch",
-    "lint": "eslint ./src --ext .ts,.tsx,.svelte",
+    "lint": "eslint ./src",
     "generate:model": "wit2ts --outDir ./src ./wit",
     "serve": "serve --cors -l 5000 --ssl-cert $HOME/certs/localhost.pem --ssl-key $HOME/certs/localhost-key.pem",
     "clean": "rm -rf node_modules && npm install"
