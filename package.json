@@ -7,7 +7,7 @@
   },
   "displayName": "vscode-svelte-wasm-extension-template",
   "description": "An example demonstrating how to use the component model to integrate WebAssembly code into VS Code while providing a Webview written with Svelte.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "categories": [],
   "keywords": [
     "WASM",
